@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <!-- Import style và các library cần thiết  -->
+    <link href="./lib/bootstrap.min.css" rel="stylesheet">
+    <link href="./lib/animation.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="card" id="container">
+        <h1 class="text-center mt-2" style="height: 10%;">Hộp chat</h1>
+        <div class="row w-100 m-0" style="height: 90%;">
+            <div class="col-md-8 border h-100">
+                <div id="chat-messages">
+                </div>
+                <div class="d-flex mt-3">
+                    <input class="form-control" id="chat-input"><button class="btn btn-success" type="submit"
+                        onclick="chat()">Gửi</button>
+                </div>
+            </div>
+            <div class="col-md-2 border p-2 h-100">
+                <h3 class="text-success text-center">Đang online</h3>
+                <div id="online-users" style="height: 94%; overflow: auto;">
+                </div>
+            </div>
+            <div class="col-md-2 border p-2 h-100">
+                <h3 class="text-success text-center">Thông tin người dùng</h3>
+                <div id="profile" style="height: 94%; overflow: auto;">
+                    <div class="m-1">
+                        <label for="avatar-input" style="cursor: pointer;">
+                            <input type="file" id="avatar-input" style="width: 0; height: 0; opacity: 0;"
+                                onchange="avatarChange()">
+                            <img id="avatar-profile" src="./image/guest.png" class="rounded-circle img-thumbnail">
+                        </label>
+                        <strong id="display-name-profile">Khách</strong>
+                    </div>
+                    <div class="m-2">
+                        <label>Họ tên</label><input class="form-control" id="display-name-input" value="Guest">
+                        <!-- <label>Ảnh đại diện</label><input class="form-control" id="avatar-input"
+                            placeholder="An url of image"> -->
+                        <button class="btn btn-primary mt-2" onclick="updateProfile()">Cập nhật</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-center">Được tạo bởi <a target="blank" href="#">Group 15</a>
+    </footer>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="./lib/bootstrap.min.js"></script>
+<script src="./lib/socket.io-client.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="chat.js"></script>
+
+</html>

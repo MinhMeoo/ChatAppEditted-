@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./lib/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
+    <link href="./style.css" rel="stylesheet"/>
+    <title>Đăng ký</title>
+</head>
+<body>
+    <div class="page-container">
+        <form class="auth-form" id="registerForm" method="post" action="/api/v1/register">
+            <h1 class="auth-title">Đăng ký tài khoản</h1>
+            <div class="form-group-vertical">
+                <label class="form-label">Tên đăng nhập</label>
+                <input type="text" class="form-control" name="username" placeholder="Tên đăng nhập" required maxlength="20">
+            </div>
+            <div class="form-group-vertical">
+                <label class="form-label">Tên hiển thị</label>
+                <input type="text" class="form-control" name="display-name" placeholder="Tên hiển thị" required maxlength="50">
+            </div>
+            <div class="form-group-vertical">
+                <label class="form-label">Mật khẩu</label>
+                <input type="password" id="txtPassword" name="password" class="form-control" placeholder="Mật khẩu" required minlength="8">
+            </div>
+            <div class="form-group-vertical">
+                <label class="form-label">Nhập lại khẩu</label>
+                <input type="password" name="confirm-password" class="form-control" placeholder="Nhập lại mật khẩu" required minlength="8">
+            </div>
+            <p class="form-message" id="form-message"></p>
+            <div class="form-action">
+                <button type="submit" class="btn btn-primary">Đăng ký</button>
+            </div>
+            <p class="note">Bạn đã có tài khoản. <a href="/">Đăng nhập</a> ngay!</p>
+        </form>
+    </div>
+</body>
+<script src="./lib/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js"></script>
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+<script src="./register.js"></script>
+</html>
